@@ -103,6 +103,8 @@ form {
   padding-right: 0;
   /*flex-grow pushes the delete element to the end*/
   flex-grow: 1;
+  /*This transition makes the effect smoother*/
+  transition: 200ms ease;
 }
 
 .delete-button {
@@ -134,6 +136,10 @@ form {
   align-items: center;
   /*This is to prevent it from being squeezed by other flex box elements*/
   flex-shrink: 0;
+  /*As a final touch i added transitions to make everything smoother*/
+  /*This ensures a smoother color change*/
+  transition: 200ms ease;
+  cursor: pointer;
 }
 
 input[type="checkbox"]:checked ~ .custom-checkbox {
@@ -142,4 +148,14 @@ input[type="checkbox"]:checked ~ .custom-checkbox {
 
 input[type="checkbox"]:checked ~ .custom-checkbox svg {
   fill: var(--primary-color);
+}
+
+/*this makes it look like todo is completed*/
+input[type="checkbox"]:checked ~ .todo {
+  text-decoration: line-through;
+  color: var(--secondary-color);
+}
+/*This hides the checkbox in CSS but still allows it to be accessible*/
+input[type="checkbox"] {
+  display: none;
 }
