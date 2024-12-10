@@ -42,8 +42,96 @@ h1 {
 
 .wrapper {
   width: 700px;
+  /*This will make sure on smaller devices the width is 100% of the screen and on larger
+   devices it can still be 700px*/
   max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+#todo-input {
+  box-sizing: border-box;
+  /*padding of 12px top and bottom & 20px left and right*/
+  padding: 12px 20px;
+  width: 100%;
+  background: none;
+  border: 2px solid var(--secondary-color);
+  border-radius: 1000px;
+  font: inherit;
+  color: var(--text-color);
+  caret-color: var(--accent-color);
+}
+
+/*This will eliminate the highlighting effect when you click on the input field*/
+#todo-input:focus {
+  outline: none;
+}
+
+form {
+  position: relative;
+}
+
+#add-button {
+  position: absolute;
+  /*This places the button in upper right corner of the webpage*/
+  top: 0;
+  right: 0;
+
+  background-color: var(--accent-color);
+  height: 100%;
+  padding: 0 30px;
+  border: none;
+  border-radius: 1000px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--background);
+  cursor: pointer;
+}
+
+.todo {
+  margin-bottom: 10px;
+  padding: 0 16px;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.todo .todo-text {
+  padding: 15px;
+  padding-right: 0;
+  /*flex-grow pushes the delete element to the end*/
+  flex-grow: 1;
+}
+
+.delete-button {
+  padding: 3px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.delete-button svg {
+  transition: 200ms ease;
+}
+
+.delete-button:hover svg {
+  fill: #ff0033;
+}
+
+.custom-checkbox {
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  min-height: 20px;
+  /*This is to ensure the circle is not squished*/
+  min-width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*This is to prevent it from being squeezed by other flex box elements*/
+  flex-shrink: 0;
 }
