@@ -135,3 +135,11 @@ form {
   /*This is to prevent it from being squeezed by other flex box elements*/
   flex-shrink: 0;
 }
+
+input[type="checkbox"]:checked ~ .custom-checkbox {
+  background-color: var(--accent-color);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox svg {
+  fill: var(--primary-color);
+}
